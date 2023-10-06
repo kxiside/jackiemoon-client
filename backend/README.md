@@ -79,4 +79,4 @@ Send the token as `Bearer Token <token>`
 
 
 ## Entity Relationship Diagram
-![app erd](https://imgur.com/a/q3uIGrJ)
+![app erd](https://i.imgur.com/lt8OcCt.jpeg)
