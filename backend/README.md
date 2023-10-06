@@ -46,6 +46,37 @@ This will be the back-end and API section for this site. JM-Originals is a passi
 | PATCH  | `/prod/<prod_id>` | `prod#update`  |
 | DELETE | `/prod/<prod_id>`        | `prod#delete` |
 
+###  Request bodies
+Request - users#signup:
+
+```json
+{
+    "credentials": {
+      "email": "an@example.email",
+      "name": "Example"
+      "password": "an example password",
+      "password_confirmation": "an example password"
+    }
+}
+```
+
+Request - prod#create (requires token):
+
+```json
+{
+    "prod": {
+        "name": "satchel",
+        "catagory": "accesory",
+        "price": "40",
+        "description": "handmade 2 pocket satchel designed by Jackie Moon",
+    }
+}
+```
+
+### Token Auth Strategy
+Send the token as `Bearer Token <token>`
+
+
 
 ## Entity Relationship Diagram
-![ERD](https://imgur.com/a/q3uIGrJ)
+![app erd](https://imgur.com/a/q3uIGrJ)
