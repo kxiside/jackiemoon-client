@@ -11,13 +11,13 @@ This will be the back-end and API section for this site. JM-Originals is a passi
 
 ## User Story
  As a user i want the ability to...
-    - access a signup page 
-    - create a login and generate a token
-    - gain access to an api once logged in
-    - interact with the products listed
-    - create a shopping cart 
-    - update the shopping cart
-    - delete items from the shopping cart
+- access a signup page 
+- create a login and generate a token
+- gain access to an api once logged in
+- interact with the products listed
+- create a shopping cart 
+- update the shopping cart
+- delete items from the shopping cart
 
 ### Current/MVP
  loading...
