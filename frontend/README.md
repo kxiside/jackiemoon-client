@@ -1,7 +1,7 @@
 # Jackie Moon Originals
 
 ## Site Description
- This is the Front-end of the site. JM-Originals is a passion for creativity and a curiosity for design. This site will be a showcase for the Artwork and clothing products Jackie Moon has forged in his lab. Items will be displayed for the user to choose which products they want to add to a shopping cart. Any art listed is up for sale by the [Designer]https://www.instagram.com/jackiemoonoriginals/ and can be contacted for any special orders. 
+This will be the back-end and API section for this site. JM-Originals is a passion for creativity and a curiosity for design. This site will be a showcase for  Artwork and clothing products. Items will be created and displayed from a user. 
 
 ### Tech
 - React
