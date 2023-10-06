@@ -22,7 +22,7 @@
  loading...
 
 ## Wireframes 
-![logo banner](https://imgur.com/a/OM8DDRs)
+![logo banner](https://imgur.com/a/OM8DDRs.png)
 
 
 
