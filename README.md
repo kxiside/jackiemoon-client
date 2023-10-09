@@ -1,7 +1,7 @@
 # Jackie Moon Originals
 
 ## Site Description
-This will be the back-end and API section for this site. JM-Originals is a passion for creativity and a curiosity for design. This site will be a showcase for  Artwork and clothing products. Items will be created and displayed from a user. 
+This will be the front end and client section for this site. JM-Originals is a passion for creativity and a curiosity for design. This site will be a showcase for  Artwork and clothing products. Items will be created and displayed from a user. 
 
 ### Tech
 - React
