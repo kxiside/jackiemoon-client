@@ -1,11 +1,14 @@
+import ProductsIndex from "./products/ProductsIndex"
+import { Container } from "react-bootstrap"
+
 const Home = (props) => {
-	// const { msgAlert, user } = props
-	console.log('props in home', props)
+	 const { msgAlert, user } = props
 
 	return (
-		<>
-			<h2>Home Page</h2>
-		</>
+		<Container>
+			<h2>All Designs</h2>
+			<ProductsIndex msgAlert={msgAlert} />
+		</Container>
 	)
 }
 
