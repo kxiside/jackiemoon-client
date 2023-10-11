@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Card } from 'react-bootstrap'
-// import { Link } from 'react-router-dom
+import { Link } from 'react-router-dom'
 import { getProducts } from '../../api/product'
 import messages from '../shared/AutoDismissAlert/messages'
 
@@ -43,7 +43,11 @@ const ProductsIndex = (props) => {
 
     const productCards = products.map(product => (
         <Card key={ product.id } style={{ width: '35%', margin: 6}}>
-            <Card.Header>{ product.name }</Card.Header>
+            <Card.Header>
+                <Link to={`/products/${product.id}`} className='btn btn-info'>
+                    { product.name }
+                </Link>
+            </Card.Header>
             <Card.Body>
                 <Card.Text>Description: { product.description}</Card.Text>
                 <Card.Text>Category: { product.category}</Card.Text>

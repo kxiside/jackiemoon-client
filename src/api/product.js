@@ -7,6 +7,9 @@ export const getProducts = () => {
 }
 
 // Read -> Show
+export const getProductId = (id) => {
+    return axios(`${apiUrl}/products/${id}`)
+}
 // Create -> Add Product
 // Update -> Change Product
 // Delete -> Remove Product

@@ -7,7 +7,9 @@ const messages = {
 	changePasswordSuccess: 'Password changed successfully!',
 	changePasswordFailure:'Failed to change passwords. Check your old password and try again.',
 	createProductSuccess: 'Nice! your creation has been added.',
-	createProductFailure: 'Sorry, there was an error. Please try again!'
+	createProductFailure: 'Sorry, there was an error. Please try again!',
+	showProductSuccess: 'Creation has been displayed!',
+	showProductFailure: 'Creation has failed! please try again...',
 }
 
 module.exports = messages
