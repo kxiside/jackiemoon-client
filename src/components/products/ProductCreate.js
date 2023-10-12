@@ -11,7 +11,7 @@ const ProductCreate = (props) => {
         description: '',
         category: '',
         price: '',
-
+        image: '',
     })
 
     const onChange = (e) => {
@@ -19,7 +19,17 @@ const ProductCreate = (props) => {
 
         setProd(prev => {
             const newName = e.target.name
-            const newValue = e.target.value
+            let newValue = e.target.value
+
+            if (e.target.type === 'number') {
+                newValue = parseInt(e.target.value)
+            }
+
+            const updatedProd = { [newName] : newValue }
+
+            return {
+                ...prev, ...updatedProd
+            }
         })
     }
 
@@ -30,7 +40,7 @@ const ProductCreate = (props) => {
                     <Card.Header>
                         <ProductForm 
                             prod={prod}
-                            handleChange={null}
+                            handleChange={onChange}
                             handleSubmit={null}
                             heading="Add a New Design"
                         />
