@@ -42,14 +42,13 @@ const ProductsIndex = (props) => {
     }
 
     const productCards = products.map(product => (
-        <Card key={ product.id } style={{ width: '35%', margin: 6}}>
+        <Card key={ product._id } style={{ width: '35%', margin: 6}}>
             <Card.Header>
-                <Link to={`/products/${product.id}`} className='btn btn-info'>
+                <Link to={`/products/${product._id}`} className='btn btn-info'>
                     { product.name }
                 </Link>
             </Card.Header>
             <Card.Body>
-                <Card.Text>Description: { product.description}</Card.Text>
                 <Card.Text>Category: { product.category}</Card.Text>
                 <Card.Text>Price: ${ product.price}</Card.Text>
             </Card.Body>

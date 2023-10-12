@@ -9,6 +9,11 @@ const linkStyle = {
 const authenticatedOptions = (
 	<>
 		<Nav.Item className='m-3'>
+			<Link to='create' style={linkStyle}>
+				Add Design
+			</Link>
+		</Nav.Item>
+		<Nav.Item className='m-3'>
 			<Link to='change-password' style={linkStyle}>
 				Change Password
 			</Link>
@@ -36,7 +41,12 @@ const alwaysOptions = (
 	<>
 		<Nav.Item className='m-3'>
 			<Link to='/' style={linkStyle}>
-				Home
+				About
+			</Link>
+		</Nav.Item>
+		<Nav.Item className='m-3'>
+			<Link to='/products' style={linkStyle}>
+				Showcase
 			</Link>
 		</Nav.Item>
 	</>

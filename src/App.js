@@ -13,6 +13,8 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 import ProductShow from './components/products/ProductShow'
+import ProductsIndex from './components/products/ProductsIndex'
+import ProductCreate from './components/products/ProductCreate'
 
 const App = () => {
 
@@ -48,6 +50,9 @@ const App = () => {
 					<Route path='/' 
 						   element={<Home msgAlert={msgAlert} user={user} />} 
 					/>
+					<Route path='/products'
+					 	   element={<ProductsIndex msgAlert={msgAlert} user={user} />}
+					/>
 					<Route
 						path='/sign-up'
 						element={<SignUp msgAlert={msgAlert} setUser={setUser} />}
@@ -72,7 +77,15 @@ const App = () => {
 						</RequireAuth>}
 					/>
 					<Route
-						path='products/:id'
+						path='/create'
+						element={
+							<RequireAuth user={user}>
+								<ProductCreate user={user} msgAlert={msgAlert} />
+							</RequireAuth>
+						}
+					/>
+					<Route
+						path='/products/:id'
 						element={
 							<ProductShow user={user} msgAlert={msgAlert} />
 						}

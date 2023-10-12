@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Container, Card } from 'react-bootstrap'
 import messages from '../shared/AutoDismissAlert/messages'
 import { getProductId } from '../../api/product'
+import LoadingScreen from '../shared/load'
 
 const ProductShow = (props) => {
     const [product, setProduct] = useState(null)
@@ -23,7 +24,7 @@ const ProductShow = (props) => {
     }, [])
 
     if(!product) {
-        return <p>Loading...</p>
+        return <LoadingScreen />
     }
 
     return (
@@ -31,6 +32,11 @@ const ProductShow = (props) => {
             <Container className='m-2'>
                 <Card>
                     <Card.Header>{ product.name }</Card.Header>
+                    <Card.Body>
+                        <Card.Text>
+                            <div>Description: { product.description }</div>
+                        </Card.Text>
+                    </Card.Body>
                 </Card>
             </Container>
         </>
