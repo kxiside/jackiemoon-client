@@ -31,6 +31,7 @@ const ProductShow = (props) => {
         <>
             <Container className='m-2'>
                 <Card>
+                    <Card.Img variant="top" src="{ product.image }" />
                     <Card.Header>{ product.name }</Card.Header>
                     <Card.Body>
                         <Card.Text>
