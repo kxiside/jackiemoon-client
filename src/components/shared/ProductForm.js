@@ -1,7 +1,7 @@
 import { Form, Button, Container } from 'react-bootstrap'
 
 const ProductForm = (props) => {
-    const { prod, handleChange, handleSubmit, handleSelect, heading } = props
+    const { prod, handleChange, handleSubmit, handleFile, heading } = props
 
     return (
         <Container className="justify-content-center">
@@ -57,11 +57,12 @@ const ProductForm = (props) => {
                 <Form.Group controlId="formFile" className="mb-3">
                     <Form.Label>Default file input example</Form.Label>
                     <Form.Control 
+                    as="input"
                     type="file"
                     placeholder="Insert File"
-                    name="image"
+                    name="image"                  
                     value={prod.image}
-                    onChange={handleChange}
+                    onChange={handleFile}
                     />
                 </Form.Group>
                 <Button className="m-2" type="submit">Submit</Button>

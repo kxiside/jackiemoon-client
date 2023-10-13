@@ -26,12 +26,12 @@ const ProductShow = (props) => {
     if(!product) {
         return <LoadingScreen />
     }
-
+    
     return (
         <>
             <Container className='m-2'>
                 <Card>
-                    <Card.Img variant="top" src="{ product.image }" />
+                    <Card.Img variant="top" src="" />
                     <Card.Header>{ product.name }</Card.Header>
                     <Card.Body>
                         <Card.Text>

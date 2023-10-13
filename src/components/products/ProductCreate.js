@@ -13,16 +13,9 @@ const ProductCreate = (props) => {
         description: '',
         category: '',
         price: '',
-        image: '',
+        image: ''
     })
 
-    const onSelect = (e) => {
-        e.persist()
-
-        return (
-            e.target.value
-        )
-    }
 
     const onChange = (e) => {
         e.persist()
@@ -35,6 +28,10 @@ const ProductCreate = (props) => {
                 newValue = parseInt(e.target.value)
             }
 
+            if (e.target.type === 'file') {
+                newValue = e.target.files[0]
+            }
+
             const updatedProd = { [newName] : newValue }
 
             return {
@@ -43,11 +40,16 @@ const ProductCreate = (props) => {
         })
     }
 
+    const onFile = async (e) => {
+        const file = e.target.files
+        console.log(file)
+    }
+
     const onSubmit = (e) => {
         e.preventDefault()
 
         createProduct(user, prod)
-            .then(res => { navigate(`/products/${res.data.prod.id}`) })
+            .then(res => { navigate(`/products/${res.data.product._id}`)})
             .then(() => {
                 msgAlert({
                     heading: 'Perfect!',
@@ -73,8 +75,8 @@ const ProductCreate = (props) => {
                         <ProductForm 
                             prod={prod}
                             handleChange={onChange}
-                            handleSelect={onSelect}
                             handleSubmit={onSubmit}
+                            handleFile={onFile}
                             heading="Add a New Design"
                         />
                     </Card.Header>
