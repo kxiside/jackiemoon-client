@@ -44,7 +44,7 @@ const ProductsIndex = (props) => {
     const productCards = products.map(product => (
         <Card key={ product._id } style={{ width: '35%', margin: 6}}>
             <Link to={`/products/${product._id}`} className='btn'>
-            <Card.Img variant="top" src="{product. image}" />
+            <Card.Img variant="top" src="" />
             <Card.Header>
                 
                     { product.name }
@@ -53,6 +53,9 @@ const ProductsIndex = (props) => {
             <Card.Body>
                 <Card.Text>Category: { product.category}</Card.Text>
                 <Card.Text>Price: ${ product.price}</Card.Text>
+                { product.owner ?
+                <Card.Text>{ product.owner.username }</Card.Text>
+                : null}
             </Card.Body>
             </Link>
         </Card>

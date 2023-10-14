@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { Container, Card } from 'react-bootstrap'
+import { Container, Card, Button} from 'react-bootstrap'
 import messages from '../shared/AutoDismissAlert/messages'
 import { getProductId } from '../../api/product'
 import LoadingScreen from '../shared/load'
@@ -26,7 +26,7 @@ const ProductShow = (props) => {
     if(!product) {
         return <LoadingScreen />
     }
-    
+
     return (
         <>
             <Container className='m-2'>
@@ -38,6 +38,17 @@ const ProductShow = (props) => {
                             <div>Description: { product.description }</div>
                         </Card.Text>
                     </Card.Body>
+                    <Card.Footer>
+                        {
+                          product.owner && user && product.owner.id === user.id
+                          ?
+                          <>
+                            <Button className="m-2" variant="link">Update</Button>
+                            <Button className="m-2" variant="link">Delete</Button>
+                          </>  
+                          : null
+                        }
+                    </Card.Footer>
                 </Card>
             </Container>
         </>
