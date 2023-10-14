@@ -22,5 +22,17 @@ export const createProduct = (user, newProd) => {
         data: { product: newProd }
     })
 }
+
 // Update -> Change Product
+export const editProduct = (user, updateProd) => {
+    return axios({
+        url: `${apiUrl}/products/${updateProd._id}`,
+        method: 'PATCH',
+        headers: {
+            Authorization: `Token token=${user.token}`
+        },
+        data: { product: updateProd }
+    })
+}
+
 // Delete -> Remove Product
