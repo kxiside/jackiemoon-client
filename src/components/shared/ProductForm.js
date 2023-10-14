@@ -1,7 +1,9 @@
 import { Form, Button, Container } from 'react-bootstrap'
+import { useState } from 'react';
 
 const ProductForm = (props) => {
     const { prod, handleChange, handleSubmit, handleFile, heading } = props
+    const [ image, setImage ] = useState('');
 
     return (
         <Container className="justify-content-center">
@@ -61,8 +63,8 @@ const ProductForm = (props) => {
                     type="file"
                     placeholder="Insert File"
                     name="image"                  
-                    value={prod.image}
-                    onChange={handleFile}
+                    value={image}
+                    onChange={(e) => setImage(e.target.value)}
                     />
                 </Form.Group>
                 <Button className="m-2" type="submit">Submit</Button>

@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { Container, Card, Button} from 'react-bootstrap'
 import messages from '../shared/AutoDismissAlert/messages'
-import { getProductId, editProduct } from '../../api/product'
+import { getProductId, editProduct, removeProduct } from '../../api/product'
+import { useNavigate } from 'react-router-dom'
+import { removeProductSuccess, removeProductFailure } from '../shared/AutoDismissAlert/messages'
 import LoadingScreen from '../shared/load'
 import ProdEdit from './ProductEdit'
 
@@ -10,6 +12,7 @@ const ProductShow = (props) => {
     const [product, setProduct] = useState(null)
     const [editModal, setEditModal] = useState(false)
     const [updated, setUpdated] = useState(false)
+    const navigate = useNavigate()
     const { id } = useParams()
     const { user, msgAlert } = props
 
@@ -25,7 +28,27 @@ const ProductShow = (props) => {
                     
                 })
             })
-    }, [])
+    }, [updated])
+
+    const rmProduct = () => {
+        removeProduct(user, product._id)
+
+        .then(() => {
+            msgAlert({
+                heading: 'Removed!',
+                message: removeProductSuccess,
+                variant: 'success'
+            })
+        })
+        .then(() => navigate('/products'))
+        .catch(() => {
+            msgAlert({
+                heading: 'There was an error!',
+                message: removeProductFailure,
+                variant: 'danger'
+            })
+        })
+    }
 
     if(!product) {
         return <LoadingScreen />
@@ -51,8 +74,16 @@ const ProductShow = (props) => {
                             className="m-2"
                              variant="link"
                              onClick={() => setEditModal(true)}
-                             >Update</Button>
-                            <Button className="m-2" variant="link">Delete</Button>
+                            >
+                            Update
+                            </Button>
+                            <Button 
+                            className="m-2"
+                            variant="link"
+                            onClick={() => rmProduct()}
+                            >
+                                Delete
+                            </Button>
                           </>  
                           : null
                         }
@@ -60,13 +91,14 @@ const ProductShow = (props) => {
                 </Card>
             </Container>
             <ProdEdit 
-                user={user}
+                
                 show={editModal}
                 editProduct={editProduct}
                 handleClose={() => setEditModal(false)}
                 product={product}
                 msgAlert={msgAlert}
                 triggerRefresh={() => setUpdated(prev => !prev)}
+                user={user}
                 
             />
         </>

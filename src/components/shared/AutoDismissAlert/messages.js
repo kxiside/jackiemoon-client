@@ -8,8 +8,12 @@ const messages = {
 	changePasswordFailure:'Failed to change passwords. Check your old password and try again.',
 	createProductSuccess: 'Nice! your creation has been added.',
 	createProductFailure: 'Sorry, there was an error. Please try again!',
-	showProductSuccess: 'Creation has been displayed!',
-	showProductFailure: 'Creation has failed! please try again...',
+	showProductSuccess: 'Design has been displayed!',
+	showProductFailure: 'Design has failed! please try again...',
+	updateProductSuccess: 'Design has been updated!',
+	updateProductFailure: 'Design update has failed! please try again...',
+	removeProductSuccess: 'Sorry to see it go!',
+	removeProductFailure: 'Design removal has failed! please try again...',
 }
 
 module.exports = messages
