@@ -1,6 +1,7 @@
 // import React, { Component } from 'react'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Card } from 'react-bootstrap'
 
 import { signUp, signIn } from '../../api/auth'
 import messages from '../shared/AutoDismissAlert/messages'
@@ -58,6 +59,9 @@ const SignUp = (props) => {
 
 
     return (
+        <Card
+        bg='info'
+        text='black'>
         <div className='row'>
             <div className='col-sm-10 col-md-8 mx-auto mt-5'>
                 <h3>Sign Up</h3>
@@ -112,6 +116,7 @@ const SignUp = (props) => {
                 </Form>
             </div>
         </div>
+        </Card>
     )
 
 }

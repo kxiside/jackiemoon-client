@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Card } from 'react-bootstrap'
 
 import { signIn } from '../../api/auth'
 import messages from '../shared/AutoDismissAlert/messages'
@@ -46,10 +47,14 @@ const SignIn = (props) => {
 	}
 
     return (
+        <Card
+        bg="info"
+        text="black">
         <div className='row'>
             <div className='col-sm-10 col-md-8 mx-auto mt-5'>
                 <h3>Sign In</h3>
-                <Form onSubmit={onSignIn}>
+                <Form 
+                onSubmit={onSignIn}>
                     <Form.Group controlId='username'>
                         <Form.Label>Username</Form.Label>
                         <Form.Control
@@ -78,6 +83,7 @@ const SignIn = (props) => {
                 </Form>
             </div>
         </div>
+        </Card>
     )
 }
 

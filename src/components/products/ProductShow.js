@@ -56,13 +56,19 @@ const ProductShow = (props) => {
 
     return (
         <>
-            <Container className='m-2'>
-                <Card>
+            <Container>
+                <Card
+                bg="info" 
+                text="white"
+                className="mx-auto"
+                style={{ width: '40%', height: 200, margin: 250}}>
                     <Card.Img variant="top" src="" />
                     <Card.Header>{ product.name }</Card.Header>
                     <Card.Body>
                         <Card.Text>
-                            <div>Description: { product.description }</div>
+                            Price ${ product.price }
+                            <br/> <br/>
+                            Description: { product.description }
                         </Card.Text>
                     </Card.Body>
                     <Card.Footer>

@@ -8,6 +8,13 @@ const ProdEdit = (props) => {
     const { user, show, handleClose, editProduct, msgAlert, triggerRefresh} = props
 
     const [product, setProduct] = useState(props.product)
+    const [prod, setProd] = useState({
+        name: '',
+        description: '',
+        category: '',
+        price: '',
+        image: ''
+    })
 
     const onChange = (e) => {
         e.persist()
@@ -20,16 +27,25 @@ const ProdEdit = (props) => {
                 newValue = parseInt(e.target.value)
             }
 
-            if (e.target.type === 'file') {
-                newValue = e.target.files[0]
-            }
-
             const updatedProd = { [newName] : newValue }
 
             return {
                 ...prev, ...updatedProd
             }
         })
+    }
+
+    const onFile = (e) => {
+        const file = e.target.files[0]
+        setImage(file)
+    }
+
+    const setImage = (file) => {
+        const reader = new FileReader()
+        reader.readAsDataURL(file)
+        reader.onloadend = () => {
+            setProd(reader.result)
+        }
     }
 
     const onSubmit = (e) => {
@@ -63,6 +79,7 @@ const ProdEdit = (props) => {
                     prod={product}
                     handleChange={onChange}
                     handleSubmit={onSubmit}
+                    handleFile={onChange}
                     heading="Update Design"
                 />
             </Modal.Body>

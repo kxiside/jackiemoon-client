@@ -40,11 +40,6 @@ const unauthenticatedOptions = (
 const alwaysOptions = (
 	<>
 		<Nav.Item className='m-3'>
-			<Link to='/' style={linkStyle}>
-				About
-			</Link>
-		</Nav.Item>
-		<Nav.Item className='m-3'>
 			<Link to='/products' style={linkStyle}>
 				Showcase
 			</Link>
@@ -53,7 +48,7 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-	<Navbar bg='grey' variant='dark' expand='md'>
+	<Navbar bg='black' variant='dark' expand='md'>
 		<Navbar.Brand>
             <Link to='/' style={linkStyle}>
                 Jackie Moon Originals

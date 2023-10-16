@@ -1,10 +1,8 @@
 import { Form, Button, Container } from 'react-bootstrap'
-import { useState } from 'react';
 
 const ProductForm = (props) => {
     const { prod, handleChange, handleSubmit, handleFile, heading } = props
-    const [ image, setImage ] = useState('');
-
+    
     return (
         <Container className="justify-content-center">
             <h2>{heading}</h2>
@@ -56,15 +54,13 @@ const ProductForm = (props) => {
                         <option value="Clothing">Clothing</option>
                     </Form.Control>
                 </Form.Group>
-                <Form.Group controlId="formFile" className="mb-3">
-                    <Form.Label>Default file input example</Form.Label>
+                <Form.Group controlId="fileFile" className="mb-3">
+                    <Form.Label>Image Upload</Form.Label>
                     <Form.Control 
-                    as="input"
-                    type="file"
-                    placeholder="Insert File"
-                    name="image"                  
-                    value={image}
-                    onChange={(e) => setImage(e.target.value)}
+                    type="file" 
+                    name="image"
+                    value={prod.image}  
+                    onChange={handleChange}
                     />
                 </Form.Group>
                 <Button className="m-2" type="submit">Submit</Button>

@@ -1,16 +1,16 @@
-import ProductsIndex from "./products/ProductsIndex"
 import { Container, Card } from "react-bootstrap"
 import { Link } from "react-router-dom"
+import "./Style/Home.css"
 
 const Home = (props) => {
 	 const { msgAlert, user } = props
 
 	return (
 		<>
-		<Container style={{ textAlign: 'center' }}>
+		<Container className='mx-auto' style={{ textAlign: 'center', margin: 40}}>
 			<Card.Header><h1>Welcome to the showcase!</h1></Card.Header>
 			<Link to={'/products'}>
-				Showcase
+				Click Here
 			</Link>
 		</Container>
 		</>

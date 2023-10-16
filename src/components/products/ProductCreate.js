@@ -30,6 +30,7 @@ const ProductCreate = (props) => {
 
             if (e.target.type === 'file') {
                 newValue = e.target.files[0]
+                console.log(newValue)
             }
 
             const updatedProd = { [newName] : newValue }
@@ -40,10 +41,22 @@ const ProductCreate = (props) => {
         })
     }
 
-    const onFile = async (e) => {
-        const file = e.target.files
+    const onFile = (e) => {
+        const file = e.target.files[0]
+        setImage(file)
         console.log(file)
     }
+
+    const setImage = (file) => {
+        const reader = new FileReader()
+        reader.readAsDataURL(file)
+        reader.onloadend = () => {
+            setProd(reader.result)
+        }
+    }
+
+
+
 
     const onSubmit = (e) => {
         e.preventDefault()
@@ -70,13 +83,13 @@ const ProductCreate = (props) => {
     return (
         <>
             <Container>
-                <Card>
+                <Card bg="info" 
+                text="black">
                     <Card.Header>
                         <ProductForm 
                             prod={prod}
                             handleChange={onChange}
                             handleSubmit={onSubmit}
-                            handleFile={onFile}
                             heading="Add a New Design"
                         />
                     </Card.Header>

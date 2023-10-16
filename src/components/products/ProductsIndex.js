@@ -6,8 +6,7 @@ import messages from '../shared/AutoDismissAlert/messages'
 
 const cardContainerLayout = {
     display: 'flex',
-    flexFlow: 'column wrap',
-    justifyContent: 'center'
+    flexDirection: 'column',
 }
 
 const ProductsIndex = (props) => {
@@ -42,7 +41,12 @@ const ProductsIndex = (props) => {
     }
 
     const productCards = products.map(product => (
-        <Card key={ product._id } style={{ width: '35%', margin: 6}}>
+        <Card
+        bg="info" 
+        text="white"
+        className="mx-auto"
+        key={ product._id }
+        style={{ width: '40%', margin: 10}}>
             <Link to={`/products/${product._id}`} className='btn'>
             <Card.Img variant="top" src="" />
             <Card.Header>
@@ -63,7 +67,7 @@ const ProductsIndex = (props) => {
         
     ))
     return (
-        <div className="container-md" style= { cardContainerLayout}>
+        <div className="container-md" style= { cardContainerLayout }>
             { productCards }
         </div>
     )
