@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Card } from 'react-bootstrap'
-
+import { Link } from 'react-router-dom'
 import { signIn } from '../../api/auth'
+import { signUp } from '../../api/auth'
 import messages from '../shared/AutoDismissAlert/messages'
 
 import Form from 'react-bootstrap/Form'
@@ -80,6 +81,9 @@ const SignIn = (props) => {
                     <Button variant='primary' type='submit'>
                         Submit
                     </Button>
+                    <p>
+                        Don't have an account? <Link to="/sign-up">Create account</Link>
+                    </p>
                 </Form>
             </div>
         </div>

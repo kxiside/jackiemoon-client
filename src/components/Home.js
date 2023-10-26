@@ -7,12 +7,7 @@ const Home = (props) => {
 
 	return (
 		<>
-		<Container className='mx-auto' style={{ textAlign: 'center', margin: 40}}>
-			<Card.Header><h1>Welcome to the showcase!</h1></Card.Header>
-			<Link to={'/products'}>
-				Click Here
-			</Link>
-		</Container>
+		
 		</>
 
 	)
