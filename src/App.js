@@ -7,6 +7,7 @@ import FileBase64 from 'react-file-base64'
 // import AuthenticatedRoute from './components/shared/AuthenticatedRoute'
 import AutoDismissAlert from './components/shared/AutoDismissAlert/AutoDismissAlert'
 import Header from './components/shared/Header'
+import Footer from './components/shared/Footer'
 import RequireAuth from './components/shared/RequireAuth'
 import Home from './components/Home'
 import SignUp from './components/auth/SignUp'
@@ -109,7 +110,9 @@ const App = () => {
 							id={msgAlert.id}
 							deleteAlert={deleteAlert}
 						/>
+				
 					))}
+					<Footer />
 			</Fragment>
 		)
 }
